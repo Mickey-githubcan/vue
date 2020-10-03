@@ -6,17 +6,62 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="app"></div>
+    <!--
+复习es6 箭头函数 
+数组的方法 forEach，map， filter,some,every,find,findIndex
 
-    <script src="./01.jpg"></script>
+       for作用：可以遍历数组或者对象
+       需要重复渲染谁,就给谁加 v-for
+       1.遍历数组（常用）
+       v-for='item in 数组名'  item遍历的每一项
+       拿下标：v-for="(item，index) in 数组名" index就是下标
 
-    <script>
-      const vm = new Vue({
-        el: "#app",
-        data: {
-          msg: "hello vue",
-        },
-      });
+       2.遍历对象（基本不用）
+        v-for="(value,prop) in 对象名" value属性值，prop属性名
+     -->
+    <div id="app">
+      <ul>
+        <li v-for="item in list">{{item}}</li>
+      </ul>
+      <hr />
+
+      <ul>
+        <li v-for="(item ,index) in list">{{item}} 和{{index}}</li>
+      </ul>
+
+      <hr />
+
+      <ul>
+        <!-- <li v-for="item in list2">{{item}}</li> -->
+        <li v-for="(item,index) in list2">{{index}}</li>
+      </ul>
+      <hr />
+
+      <!-- 
+        复习es6 ，箭头与函数
+        数组的方法;forEach, map,filter,some,every,find,findIndex
+
+        for作用:可以遍历数据或者对象
+        1.遍历数组
+        遍历对象 
+        
+         v-for="(value,prop) in 数组名"  item遍历的每一项
+      -->
+
+  <div id="app">
+<h1 v-for='item in list' > {{item}} </h1>
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    const vm = new Vue ({
+      el:'#app',
+      data:{
+       list:['张飞','貂蝉','吕布','甄姬']
+      }
+    })
+  </script>
     </script>
   </body>
 </html>
